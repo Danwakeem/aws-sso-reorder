@@ -1,5 +1,7 @@
 # aws-sso-reorder
 
+![Banner](./.github/assets//banner.jpg)
+
 > Chrome extension that allows you to reorder aws accounts on the AWS SSO page
 
 ## Installing
