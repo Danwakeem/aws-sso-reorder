@@ -43,9 +43,9 @@ jobs:
         uses: mobilefirstllc/cws-publish@latest
         with:
           action: 'publish'
-          client_id: ${{ secrets.CLIENT }}
-          client_secret: ${{ secrets.SECRET }}
-          refresh_token: ${{ secrets.TOKEN }}
+          client_id: ${{ secrets.EXTENSION_CLIENT }}
+          client_secret: ${{ secrets.EXTENSION_SECRET }}
+          refresh_token: ${{ secrets.EXTENSION_REFRESH_TOKEN }}
           extension_id: 'pnnmahkabmdlfeaogalilihgmhpgnngb' 
           zip_file: './package/${{ steps.build-zip.outputs.file-name }}'
 
