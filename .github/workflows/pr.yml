@@ -1,0 +1,29 @@
+name: PR Review
+
+permissions:
+  id-token: write
+  contents: read
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - name: Install Dependencies
+        run: npm install
+      - name: Build zip
+        id: build-zip
+        run: |
+          npm run zip
+          FILE_NAME=$(ls package | head -n 1)
+          echo "::set-output name=file-name::$FILE_NAME"
+      - name: Echo file
+        run: echo "./package/${{ steps.build-zip.outputs.file-name }}"
