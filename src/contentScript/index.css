@@ -1,0 +1,23 @@
+.aws-sso-item-handle-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  user-select: none; /* Standard */
+  -webkit-user-select: none; /* Chrome, Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.aws-sso-item-handle {
+  display: flex;
+  align-items: center;
+  cursor: grab;
+}
+
+.draggable-mirror {
+  background-color: white;
+}
+
+.draggable-source--is-dragging {
+  opacity: 0.3;
+}

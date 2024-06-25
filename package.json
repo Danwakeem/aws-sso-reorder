@@ -1,0 +1,38 @@
+{
+  "name": "aws-sso-reorder",
+  "displayName": "AWS SSO Reorder",
+  "version": "0.0.1",
+  "author": "Danwakeem",
+  "description": "Chrome extension that allows you to reorder aws accounts on the AWS SSO page",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "chrome-extension",
+    "sso",
+    "aws",
+    "vite",
+    "create-chrome-ext"
+  ],
+  "engines": {
+    "node": ">=14.18.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "fmt": "prettier --write '**/*.{ts,json,css,scss,md}'",
+    "zip": "npm run build && node src/zip.js"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.19",
+    "@types/chrome": "^0.0.246",
+    "gulp": "^5.0.0",
+    "gulp-zip": "^6.0.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11"
+  },
+  "dependencies": {
+    "@shopify/draggable": "^1.1.3"
+  }
+}
