@@ -18,7 +18,7 @@ export default defineManifest({
   content_scripts: [
     {
       matches: ['https://*.awsapps.com/*'],
-      js: ['src/contentScript/index.ts']
+      js: ['src/contentScript/index.ts'],
     },
   ],
   web_accessible_resources: [
@@ -27,5 +27,5 @@ export default defineManifest({
       matches: [],
     },
   ],
-  permissions: ['storage']
+  permissions: ['storage'],
 })
