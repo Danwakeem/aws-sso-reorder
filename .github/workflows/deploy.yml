@@ -25,7 +25,7 @@ jobs:
   publish-extension:
     needs:
       - release-please
-    if: ${{ needs.release-please.outputs.release-created }}
+    if: ${{ needs.release-please.outputs['release-created'] == 'true' }}
     name: Publish extension
     runs-on: ubuntu-latest
     steps:
@@ -33,6 +33,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
+      - name: Echo JSON Output
+        run: echo '${{ toJson(needs.release-please.outputs) }}'
+      - name: Install dependencies
+        run: npm ci
       - name: Build zip
         id: build-zip
         run: |
