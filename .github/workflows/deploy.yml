@@ -20,5 +20,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: googleapis/release-please-action@v4
         id: release
-      # - name: Echo JSON Output
-      #   run: echo '${{ toJson(steps.release.outputs) }}'
+      - name: Echo JSON Output
+        run: echo '${{ toJson(steps.release.outputs) }}'
