@@ -22,3 +22,32 @@ jobs:
         id: release
       - name: Echo JSON Output
         run: echo '${{ toJson(steps.release.outputs) }}'
+  publish-extension:
+    needs:
+      - release-please
+    if: ${{ needs.release-please.outputs.release-created }}
+    name: Publish extension
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Build zip
+        id: build-zip
+        run: |
+          npm run zip
+          FILE_NAME=$(ls package | head -n 1)
+          echo "::set-output name=file-name::$FILE_NAME"
+      - name: Upload to Chrome Web Store
+        uses: mobilefirstllc/cws-publish@latest
+        with:
+          action: 'publish'
+          client_id: ${{ secrets.CLIENT }}
+          client_secret: ${{ secrets.SECRET }}
+          refresh_token: ${{ secrets.TOKEN }}
+          extension_id: 'pnnmahkabmdlfeaogalilihgmhpgnngb' 
+          zip_file: './package/${{ steps.build-zip.outputs.file-name }}'
+
+
+      
