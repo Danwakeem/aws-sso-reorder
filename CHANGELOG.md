@@ -9,6 +9,13 @@ Summary
   5. version timestamp follow the yyyy.MM.dd format
 ```
 
+## [1.0.1](https://github.com/Danwakeem/aws-sso-reorder/compare/aws-sso-reorder@v1.0.0...aws-sso-reorder@v1.0.1) (2024-06-26)
+
+
+### Bug Fixes
+
+* Images in zip output ([99f6319](https://github.com/Danwakeem/aws-sso-reorder/commit/99f6319ac84564b6baeda996ea9106f829316ab8))
+
 ## 1.0.0 (2024-06-25)
 
 
