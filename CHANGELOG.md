@@ -9,6 +9,13 @@ Summary
   5. version timestamp follow the yyyy.MM.dd format
 ```
 
+## [1.0.2](https://github.com/Danwakeem/aws-sso-reorder/compare/aws-sso-reorder@v1.0.1...aws-sso-reorder@v1.0.2) (2024-06-27)
+
+
+### Bug Fixes
+
+* Input reset list ([53bcf1e](https://github.com/Danwakeem/aws-sso-reorder/commit/53bcf1e12b17101c023a624bc974f1c6ac50686f))
+
 ## [1.0.1](https://github.com/Danwakeem/aws-sso-reorder/compare/aws-sso-reorder@v1.0.0...aws-sso-reorder@v1.0.1) (2024-06-26)
 
 
