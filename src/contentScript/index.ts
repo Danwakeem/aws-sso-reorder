@@ -19,7 +19,11 @@ import { waitForElement, initializeAccountOrders, getOrderOfElements } from './u
         const value = event.target.value
         saveOrder = !value
         if (!value) {
-          initializeAccountOrders(containers)
+          // Compensate for the delay between the input changing and
+          // the framework they are using rerendering the list
+          setTimeout(() => {
+            initializeAccountOrders(document.querySelectorAll(containerSelector))
+          }, 25);
         }
       })
     }
